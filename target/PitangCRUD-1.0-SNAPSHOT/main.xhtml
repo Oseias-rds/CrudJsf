@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"> 
+    <h:head>
+
+        <title>PitangCrud</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
+        <!-- JavaScript Bundle with Popper -->
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p  class="h2 shadow p-3 mb-5 bg-white rounded "> Cadastro PitangCrud </p>
+
+            <div class="card bg-light shadow p-3 mb-5 bg-white rounded" style="width: 50rem;">
+
+
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <label for="floatingInput">Nome</label>
+
+                    <h:inputText value="#{f.h.nome}" class="form-control" id="floatingInpu"/>
+
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <label for="floatingInput">Email</label>
+                    <h:inputText value="#{f.h.email}" class="form-control" id="floatingInput"/>
+
+
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <label for="floatingPassword">Senha</label>
+                    <h:inputText value="#{f.h.senha}" class="form-control" id="floating"/>
+                </div>
+
+
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <label for="floatingNumero">Numero/telefone</label>
+                    <h:inputText value="#{f.h.telefone}" class="form-control" id="floatingNumero"/>
+
+                    <label for="floatingNumero">DDD</label>
+                    <h:inputText value="#{f.h.DDD}" class="form-control" id="floatingDDD"/>
+                </div>
+                
+                    <h:commandButton action="#{f.cadastrar()}" value="Cadastrar" class="btn btn-primary" ></h:commandButton>
+                
+                    
+
+                    
+
+                <br></br>
+                    <h:commandButton action="#{f.fazerLoging(email, senha)}" value="Login" class="btn btn-secondary btn-lg btn-block " ></h:commandButton>
+
+                    
+                
+            </div>
+            <div class="modal fade" id="Loing" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLab">Fazer login 😉</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <label for="floatingInput">Email</label>
+                                <h:inputText value="#{f.h.emailLogin}" class="form-control" id="floatingInp" />
+                                <div class="card-body">
+                                    <p class="card-text"></p>
+                                    <label for="floatingPassword">Senha</label>
+                                    <h:inputText value="#{f.h.senhaLogin}" class="form-control" id="floatingSenha"/>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class=" btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#lista-usuarios">Listar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </h:form>
+
+        <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabe">Usuário cadastrado com sucesso 😀!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Usuario cadastrado com sucesso 🎉🥳
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lista-usuarios">Listar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="modal fade" id="lista-usuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">---Lista de Usuarios---</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                    </div>
+                    <div class="modal-body">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h:form>
+
+<!--             <h:commandButton action="#" value="click" ></h:commandButton> -->
+            
+
+
+
+
+
+
+        </h:form>
+    </h:body>
+</html>
+
