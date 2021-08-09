@@ -16,11 +16,12 @@ import java.util.logging.Logger;
  * @author user
  */
 public class UsuarioRepository {
-
-    private String url = "jdbc:mysql://localhost:3306/cadatro";
+    
+//Codigo inseguro
+    private String url = "jdbc:postgresql://ec2-44-194-145-230.compute-1.amazonaws.com:5432/dphkd78nr5dt9";
     private String driver = "";
-    private String Name = "root";
-    private String password = "";
+    private String Name = "rsxowzwgsrvttf";
+    private String password = "1efd195ba7718fd7b743adbd4a6f63e3869433fe319f4404c56d1d66e3e5fd95";
     private Connection conn;
     TelefoneRepository tr = new TelefoneRepository();
     
@@ -28,7 +29,7 @@ public class UsuarioRepository {
     public UsuarioRepository() {
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
             this.conn = DriverManager.getConnection(
                     url, Name, password);
 
